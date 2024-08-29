@@ -1,0 +1,21 @@
+g++ -c mono_phone.cc -o mono_phone.o     -I/home/pasindu/ORB_SLAM3     -I/home/pasindu/ORB_SLAM3/include     -I/home/pasindu/ORB_SLAM3/include/CameraModels     -I/home/pasindu/ORB_SLAM3/eigen     -I/home/pasindu/ORB_SLAM3/Thirdparty/Sophus     -I/home/pasindu/ORB_SLAM3/Thirdparty/g2o     -I/home/pasindu/ORB_SLAM3/Thirdparty     -I/home/pasindu/ORB_SLAM3/Thirdparty/Pangolin-0.6/include     $(pkg-config --cflags opencv4)     $(pkg-config --cflags eigen3)     -O3 -march=native -std=c++14
+
+g++ mono_phone.o -o mono_phone \
+    -L/home/pasindu/ORB_SLAM3/lib \
+    -L/usr/local/lib \
+    -L/home/pasindu/ORB_SLAM3/Thirdparty/Pangolin-0.6/build/src \
+    -lORB_SLAM3 \
+    -lopencv_core \
+    -lopencv_highgui \
+    -lopencv_imgproc \
+    -lopencv_videoio \
+    -lopencv_features2d \
+    -lpangolin \
+    -lpthread \
+    -lboost_system \
+    -lboost_filesystem \
+    -lGL \
+    -lGLEW \
+    -std=c++14
+
+
